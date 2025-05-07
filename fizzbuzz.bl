@@ -1,0 +1,15 @@
+Repeat 1 to 100 {
+    If (i % 15 == 0) then {
+        Serve "FizzBuzz";
+    } Else {
+        If (i % 3 == 0) then {
+            Serve "Fizz";
+        } Else {
+            If (i % 5 == 0) then {
+                Serve "Buzz";
+            } Else {
+                Serve i;
+            }
+        }
+    }
+}

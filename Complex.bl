@@ -1,0 +1,32 @@
+Ingredient batches       : int;
+Ingredient perBatch      : int;
+Ingredient batchNo       : int;
+Ingredient cookiesMade   : int;
+Ingredient report        : string;
+
+Ask "How many batches to produce?" into batches;
+Ask "How many cookies per batch?" into perBatch;
+
+Recipe produce_batch(batchIndex, targetCount) {
+  Serve "=== Starting batch " + batchIndex + " ===";
+  Mix 0 into cookiesMade;
+  Mix "" into report;
+
+  Repeat 1 to targetCount {
+    Mix cookiesMade + 1 into cookiesMade;
+    Serve "Baking cookie #" + i + "...";
+    
+  }
+
+  Serve "Batch " + batchIndex + " complete!";
+  Serve "Cookies baked: " + cookiesMade;
+
+}
+
+Mix 1 into batchNo;
+Repeat 1 to batches {
+  Mix i into batchNo;
+  Make produce_batch(batchNo, perBatch);
+}
+
+Serve " All " + batches + " batches finished ";

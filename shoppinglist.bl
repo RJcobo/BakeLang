@@ -1,0 +1,13 @@
+Ingredient count : int;
+Ingredient item  : string;
+Ingredient list  : string;
+
+Ask "How many items on your shopping list?" into count;
+Mix "" into list;
+
+Repeat 1 to count {
+  Ask "Enter item #" + i + ":" into item;
+  Mix list + item + ", " into list;
+}
+
+Serve "Your shopping list: " + list;
